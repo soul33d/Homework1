@@ -80,9 +80,11 @@ public class TerminalHelper {
 
     private void findAndPrint() {
         int number = readIntegerFromInput("Please enter an integer to find:");
-        int numberIndex = arrayHolder.findNumberIndex(number);
-        if (numberIndex >= 0){
-            System.out.printf("Index of a number %d is %d\n", number,numberIndex);
+        String numberIndex = arrayHolder.findNumberIndex(number);
+        if (numberIndex.length() > 0){
+            String indexMsg = "Index";
+            if (numberIndex.length() > 2) indexMsg = "Indexes";
+            System.out.printf("%s of a number %d is: %s\n", indexMsg, number,numberIndex);
         } else {
             System.out.println("Number not found");
         }

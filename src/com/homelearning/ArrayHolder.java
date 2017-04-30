@@ -5,6 +5,10 @@ import java.util.Arrays;
 public class ArrayHolder {
     private int [] numbers;
 
+    public ArrayHolder() {
+        this(5);
+    }
+
     public ArrayHolder(int length) {
         numbers = new int[length];
     }
@@ -34,12 +38,16 @@ public class ArrayHolder {
         return result;
     }
 
-    public int findNumberIndex(int value){
-        int result = -1;
+    public String findNumberIndex(int value){
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == value) result = i;
+            if (numbers[i] == value) {
+                result.append(i).append(", ");
+            }
         }
-        return result;
+        if (result.length() > 2) result.delete(result.length() - 2, result.length());
+        result.append(".");
+        return result.toString();
     }
 
     public int getSize(){
