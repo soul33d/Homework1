@@ -73,7 +73,7 @@ public class TerminalHelper {
                 sortAndPrint();
                 break;
             default:
-                System.out.println("The are is no action for entered number!");
+                System.out.println("The are iKs no action for entered number!");
                 askForAction();
         }
     }
@@ -81,7 +81,7 @@ public class TerminalHelper {
     private void findAndPrint() {
         int number = readIntegerFromInput("Please enter an integer to find:");
         String numberIndex = arrayHolder.findNumberIndex(number);
-        if (numberIndex.length() > 0){
+        if (numberIndex.length() > 1){
             String indexMsg = "Index";
             if (numberIndex.length() > 2) indexMsg = "Indexes";
             System.out.printf("%s of a number %d is: %s\n", indexMsg, number,numberIndex);
